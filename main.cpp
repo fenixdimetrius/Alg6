@@ -6,7 +6,7 @@
 #include <math.h>
 #include <string>
 #include <vector>
-
+//Hello git!
 int n = 1000;
 double eps;
  gsl_vector * norm( gsl_vector * x)
