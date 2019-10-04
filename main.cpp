@@ -9,6 +9,9 @@
 //Hello git!
 int n = 1000;
 double eps;
+std::string tg = "abs";
+
+
  gsl_vector * norm( gsl_vector * x)
 {
     if(gsl_blas_dnrm2(x)>1)
@@ -19,6 +22,37 @@ double eps;
     }
     return x;
 }
+
+ gsl_vector * sign(gsl_vector * x)
+ {
+        gsl_vector * xTemp = gsl_vector_alloc (n);
+        //x = gsl_vector_alloc (n);
+        for (int i = 0; i<n;i++)
+             (gsl_vector_get(x,i)>0)?(gsl_vector_set(xTemp,i,1)):((gsl_vector_get(x,i)<0)?(gsl_vector_set(xTemp,i,-1)):(gsl_vector_set(xTemp,i,0)));
+
+        return xTemp;
+ }
+
+double G( double g, gsl_vector * x, std::string tr)
+{
+    double t;
+
+    if(tr == "grad")
+    {
+        if (tg == "linear") t = g;
+        //if (tg == "abs") t = g*sign(x);
+        if (tg == "sqr") t =
+    }
+
+    if(tr == "g")
+    {
+
+    }
+
+    return t;
+
+}
+
 
 
 
@@ -62,6 +96,7 @@ int main (void)
 
      while(2*pow(Th0,2/pow(eps,2)) > S+I)
      {
+        Grad_g(x);
 
      }
 
