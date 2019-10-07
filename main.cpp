@@ -41,7 +41,7 @@ double G( double g, gsl_vector * x, std::string tr)
     {
         if (tg == "linear") t = g;
         //if (tg == "abs") t = g*sign(x);
-        if (tg == "sqr") t =
+        //if (tg == "sqr") t =
     }
 
     if(tr == "g")
